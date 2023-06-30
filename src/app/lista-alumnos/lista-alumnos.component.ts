@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 
 
 
@@ -31,4 +31,16 @@ export class ListaAlumnosComponent {
     return promedio >= 8;
   }
 
+}
+
+
+@Pipe({
+  name:'formatoPromedio'
+})
+
+export class FormatoPromedioPipe implements PipeTransform {
+  transform(value: number):string {
+    return value.toFixed(1);
+    
+  }
 }
